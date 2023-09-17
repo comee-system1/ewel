@@ -1,0 +1,56 @@
+body{
+    font-size:18px;
+}
+div.loginbox{
+    width:680px;
+    height:300px;
+    margin:0 auto;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-340px;
+    margin-top:-150px;
+}
+div.questionbox{
+    width:80%;
+    margin:0 auto;
+    margin-top:100px;
+}
+footer{
+    width:100%;
+    height:20px;
+    margin-top:20px;
+    background-color:#ccc;
+}
+
+.text-red{color:red;}
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+.w100{width:100px;}
+.fwhite{color:#fff !important; }
+label{font-weight: bold;}
+input.shnone{
+    box-shadow:none !important;
+    -webkit-box-shadow:none !important;
+}
+table.crestable th{
+    width:50%;
+    background-color: #666;
+    color:#fff;
+    text-align: center;
+}
+.boxbord{
+    border:1px solid #ccc;
+    padding:10px;
+    width:80%;
+    margin:0 auto;
+    margin-top:10%;
+}
+
+@media screen and (max-width: 480px) {
+/* 1024pxまでの幅の場合に適応される */
+    div.loginbox{
+        width:80%;
+        margin-left:-40%;
+    }
+}

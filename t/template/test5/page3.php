@@ -1,0 +1,151 @@
+<?PHP
+$css1 = "guide";
+$title = "受検ページ";
+$js[1] = "page";
+include_once("include_header.php");
+?>
+<div id="main">
+	<div id="contents">	
+<?PHP
+	include_once("include_title.php");
+?>
+	<div id="page"><?=$pager?>/<?=$max?>ページ</div>
+	<form action="<?=D_URL_TEST?>test/<?=$first?>/?k=<?=$_REQUEST[ 'k' ]?>" method="POST">
+<?PHP
+	if($errmsg){
+?>
+	<p class="errmsg"><?=$errmsg?></p>
+<?PHP
+	}
+?>
+	<p id="TimeLeft"></p>
+
+
+	<div class="questionBox">
+		<p><?=$exam[ 'title' ]?></p>
+	</div>
+	<div class="exBox"><?=$exam[ 'code' ]?></div>
+	<div class="answerBox">
+
+<?PHP
+	$j=0;
+	$ans = $answer[ $pager ];
+	foreach($exam[ 'ans' ] as $key=>$val){
+		$img1 = "off";
+		$img2 = "off";
+		$img3 = "off";
+		$img4 = "off";
+		$img5 = "off";
+
+		$chk1 = "";
+		$chk2 = "";
+		$chk3 = "";
+		$chk4 = "";
+		$chk5 = "";
+
+		if($ans[$key] == 1){
+			$img1 = "on";
+			$chk1 = "CHECKED";
+
+		}
+		if($ans[$key] == 2){
+			$img2 = "on";
+			$chk2 = "CHECKED";
+
+		}
+		if($ans[$key] == 3){
+			$img3 = "on";
+			$chk3 = "CHECKED";
+
+		}
+		if($ans[$key] == 4){
+			$img4 = "on";
+			$chk4 = "CHECKED";
+		}
+		if($ans[$key] == 5){
+			$img5 = "on";
+			$chk5 = "CHECKED";
+		}
+
+?>
+	<div class="pageQuesBox">
+		<div class="number pageLeft p10"><?=$val[ 'no' ]?>．</div>
+		<div class="title pageRight p90"><?=$val[ 'q' ]?></div>
+	</div>
+	<br clear=all />
+	<ul class="mn">
+		<li  >
+				<div class="indent"><input type="radio" name="sec[<?=$pager?>][<?=$key?>]" value="1" id="chk_<?=$key?>_1" <?=$chk1?>  class="rd<?=$key?>" ></div>
+				<div class="left"><img src="<?=D_URL_TEST?>image/check_<?=$img1?>.gif" class="radio4 img<?=$key?>" id="img_<?=$key?>_1" /></div>
+				<div id="text_<?=$key?>_1" class="radio4 left mg" ><?=$val[ '1' ]?></div>
+				<br clear=all />
+		</li>
+		<li  >
+				<div class="indent"><input type="radio" name="sec[<?=$pager?>][<?=$key?>]" value="2" id="chk_<?=$key?>_2" <?=$chk2?> class="rd<?=$key?>" ></div>
+				<div class="left"><img src="<?=D_URL_TEST?>image/check_<?=$img2?>.gif" class="radio4 img<?=$key?>" id="img_<?=$key?>_2" /></div>
+				<div id="text_<?=$key?>_2"  class="radio4 left mg"><?=$val[ '2' ]?></div>
+				<br clear=all />
+		</li>
+		<li  >
+				<div class="indent"><input type="radio" name="sec[<?=$pager?>][<?=$key?>]" value="3" id="chk_<?=$key?>_3" <?=$chk3?> class="rd<?=$key?>" ></div>
+				<div class="left"><img src="<?=D_URL_TEST?>image/check_<?=$img3?>.gif" class="radio4 img<?=$key?>" id="img_<?=$key?>_3" /></div>
+				<div id="text_<?=$key?>_3"  class="radio4 left mg"><?=$val[ '3' ]?></div>
+				<br clear=all />
+		</li>
+		<li  >
+				<div class="indent"><input type="radio" name="sec[<?=$pager?>][<?=$key?>]" value="4" id="chk_<?=$key?>_4" <?=$chk4?> class="rd<?=$key?>" ></div>
+				<div class="left"><img src="<?=D_URL_TEST?>image/check_<?=$img4?>.gif" class="radio4 img<?=$key?>" id="img_<?=$key?>_4" /></div>
+				<div id="text_<?=$key?>_4"  class="radio4 left mg" ><?=$val[ '4' ]?></div>
+				<br clear=all />
+		</li>
+
+		<li  >
+				<div class="indent"><input type="radio" name="sec[<?=$pager?>][<?=$key?>]" value="5" id="chk_<?=$key?>_5" <?=$chk5?> class="rd<?=$key?>" ></div>
+				<div class="left"><img src="<?=D_URL_TEST?>image/check_<?=$img5?>.gif" class="radio4 img<?=$key?>" id="img_<?=$key?>_5" /></div>
+				<div id="text_<?=$key?>_5"  class="radio4 left mg" ><?=$val[ '5' ]?></div>
+				<br clear=all />
+		</li>
+	</ul>
+<?PHP
+	$j++;
+	}
+?>
+
+	</div>
+
+	<br clear=all />
+	<div class="center">
+<?PHP
+	if($pager > 1){
+?>
+		<input type="submit" name="back" value="戻る" class="button">
+<?PHP
+	}
+?>
+<?PHP
+
+	if($pager == $max){
+		$btn = "検査完了";
+	}else{
+		$btn = "次のページ";
+	}
+?>
+		<input type="submit" name="next" value="<?=$btn?>" class="button" id="next">
+	</div>
+
+
+		<input type="hidden" name="nextPage" value="<?=$nextPage?>" id="nextPage">
+		<input type="hidden" name="backPage" value="<?=$backPage?>" id="backPage">
+		<input type="hidden" name="temp" value="page">
+		<input type="hidden" name="time" value="<?=$time?>" id="time" >
+		<input type="hidden" name="pager" value="<?=$pager?>" id="pager" >
+	</form>
+	</div>
+<?PHP
+include_once("include_footer_name.php");
+?>
+</div>
+
+<?PHP
+include_once("include_footer.php");
+?>

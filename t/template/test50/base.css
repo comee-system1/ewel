@@ -1,0 +1,96 @@
+.f18{
+	font-size:18px;
+}
+.pd0{
+	padding:0 !important;
+	margin:0 !important;
+}
+.pd5{
+	padding:5px;
+}
+.pd10{
+	padding:10px;
+}
+.w60{
+	width:60px;
+}
+.w80p{
+	width:80%;
+}
+.mgl20{
+	margin-left:20px !important;
+}
+.mgl40{
+	margin-left:40px !important;
+}
+.mgl80{
+	margin-left:80px !important;
+}
+.mgl100{
+	margin-left:100px !important;
+}
+.mt5{
+	margin-top:5px !important;
+}
+.mt10{
+	margin-top:10px !important;
+}
+.mt30{
+	margin-top:30px !important;
+}
+
+.blocks{
+	display:block !important;
+}
+.iblock{
+	display:inline-block;
+}
+ol.guide{
+	font-size:22px;
+}
+ol.answer{
+	margin-left:20px;
+	padding:0;
+}
+
+ul.listNon{
+	list-style-type:none;
+}
+
+
+dl dt{
+	clear: left;
+	float: left;
+	height:35px;
+	line-height:45px;
+	display: inline-block;
+	vertical-align:middle;
+}
+dl dd{
+	margin-left: 20px;
+	height:35px;
+	display: inline-block;
+	line-height:35px;
+	vertical-align:middle;
+}
+input.radio{
+	width:30px;
+	height:30px;
+}
+
+div.center{
+	text-align:center;
+}
+div.center input.button{
+	padding:10px;
+	width:250px;
+}
+div.center input.button:hover{
+	background-color:#d8d8d8;
+}
+p.error{
+	border:1px solid #ff0000;
+	background-color:#ffc0cb;
+	padding:10px;
+	color:#ff0000;
+}

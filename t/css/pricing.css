@@ -1,0 +1,39 @@
+html {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+
+  }
+  span.red{color:red;}
+  span.blue{color:blue;}
+  .w100{ width:100px;}
+  .w200{ width:200px;}
+  .container {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
+  }
+  
+  .card-deck .card {
+    min-width: 220px;
+  }
+  
+  .mt20{
+      margin-top:20px;
+  }
+  .card-primary{
+    background-color:#007bff;
+    color:#fff;
+  }
+  div.card-primary div.card-body{
+    padding:3px;
+  }
+  .pd20{ padding:20px; }
+  .mt10{ margin-top:10px; }
+  .mt20{ margin-top:20px; }
+  #next_hidden{display:none;}
