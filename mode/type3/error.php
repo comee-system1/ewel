@@ -1,4 +1,0 @@
-<?PHP
-
-	$html = "error";
-?>
